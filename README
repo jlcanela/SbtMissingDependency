@@ -1,0 +1,24 @@
+This project shows a weird bug with SBT and a PDF Library called IcePDF.
+
+To reproduce the bug :
+1 - install sbt 0.7.4
+   http://code.google.com/p/simple-build-tool/wiki/Setup
+2 - get the following jars from the file ICEpdf-pro-4.2.0-bin-trial.zip to be downloaded at http://www.icepdf.org/downloads.html
+(copy the content of lib directory to lib)
+  batik-awt-util.jar
+  batik-dom.jar
+  batik-svg-dom.jar
+  batik-svggen.jar
+  batik-util.jar
+  batik-xml.jar
+  icepdf-core.jar
+  icepdf-pro-intl.jar
+  icepdf-pro.jar
+  icepdf-viewer.jar
+  jarsToLoad.txt
+  logging.properties
+  versions-licenses.html
+3 - 'sbt clean compile' => a weird Missing Dependency error message is displayed
+4 - when building with scalac (build-with-scalac.sh), it works
+5 - when building with only ONE scala source file, it works
+6 - when building with IcePdf non-trial version, it works
